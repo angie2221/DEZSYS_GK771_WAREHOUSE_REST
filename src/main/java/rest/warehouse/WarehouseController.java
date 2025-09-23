@@ -17,9 +17,7 @@ public class WarehouseController {
     @RequestMapping("/")
     public String warehouseMain() {
     	String mainPage = "This is the warehouse application! (DEZSYS_WAREHOUSE_REST) <br/><br/>" +
-                          "<a href='http://localhost:8080/warehouse/001/json'>Link to warehouse/001/json</a><br/>" +
-                          "<a href='http://localhost:8080/warehouse/001/xml'>Link to warehouse/001/xml</a><br/>" 
-                          ;
+                          "<a href='http://localhost:8080/warehouse/001/json'>Link to warehouse/001/json</a><br/>";
         return mainPage;
     }
 
