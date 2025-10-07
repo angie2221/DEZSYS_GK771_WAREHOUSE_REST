@@ -14,6 +14,7 @@ public class WarehouseService {
     	
     	WarehouseSimulation simulation = new WarehouseSimulation();
         return simulation.getData( inID );
+
         
     }
     

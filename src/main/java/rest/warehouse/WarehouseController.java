@@ -17,7 +17,8 @@ public class WarehouseController {
     @RequestMapping("/")
     public String warehouseMain() {
     	String mainPage = "This is the warehouse application! (DEZSYS_WAREHOUSE_REST) <br/><br/>" +
-                          "<a href='http://localhost:8080/warehouse/001/json'>Link to warehouse/001/json</a><br/>";
+                "<a href='http://localhost:8080/warehouse/001/json'>Link to warehouse/001/json</a><br/>" +
+                "<a href='http://localhost:8080/warehouse/001/xml'>Link to warehouse/001/xml</a><br/>";
         return mainPage;
     }
 
@@ -25,5 +26,8 @@ public class WarehouseController {
     public WarehouseData warehouseData( @PathVariable String inID ) {
         return service.getWarehouseData( inID );
     }
-
-}
+    @RequestMapping(value="/warehouse/{inID}/xml", produces = MediaType.APPLICATION_XML_VALUE)
+    public WarehouseData warehouseDataxml(@PathVariable String inID) {
+        return service.getWarehouseData(inID);
+        }
+    }
