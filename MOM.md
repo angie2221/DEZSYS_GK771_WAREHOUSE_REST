@@ -19,3 +19,28 @@ EK:
 
 ![img_4.png](img_4.png)
 Meine Nachricht wurd am Zentralrechner empfangen. 
+
+## Fragestellungen:
+
+  ## Nennen Sie mindestens 4 Eigenschaften der Message Oriented Middleware?
+        asynchrone Kommunikation, Flexibilität, Sicherheit, Skalierbarkeit
+  ## Was versteht man unter einer transienten und synchronen Kommunikation?
+        MOM erlaubt es eine Nachricht zu senden, ohne dass eine sofortige Antwort kommt. Synchron bedeutet, dass eine Antwort gesendet wird, sobald eine Nachricht empfangen ist.
+  ## Beschreiben Sie die Funktionsweise einer JMS Queue?
+      Sobald eine Nachricht von einem Sender geschickt wird, bleibt sie in einer Queue, bis sie von einem Empfänger abgeholt werden.
+    ## JMS Overview - Beschreiben Sie die wichtigsten JMS Klassen und deren Zusammenhang?
+        ConnectionFactory: Erstellt ein Connection-Objekt.
+        Connection: Stellt die Verbindung zur JMS-Provider her.
+        Session: Erstellt Nachrichten, Sender und Empfänger.
+        MessageProducer: Sendet Nachrichten an eine Destination (Queue oder Topic).
+        MessageConsumer: Empfängt Nachrichten von einer Destination.
+        Message: Repräsentiert die Nachricht, die gesendet oder empfangen wird.
+    ## Beschreiben Sie die Funktionsweise eines JMS Topic?
+        Eine JMS Topic implementiert Publisher & Subscriber Logik. Wenn ein Publisher eine Nachricht veröffentlicht, geht sie an alle Subscriber.
+    ## Was versteht man unter einem lose gekoppelten verteilten System? Nennen Sie ein Beispiel dazu. Warum spricht man hier von lose? `
+        In einem Los gekoppelten System sind die einzelnten Komponenten unabhängig voneinander, um das Risiko zu verhindern
+        dass ein Fehler in einer Komponente das ganze System beeinflusst. Beispielweise bei der Trennung von Client & Server. Einige Funktionen sind nicht verfügbar,
+        aber der Client kann unabhängig von Server arbeiten.
+
+https://wasistderunterschied.com/15-unterschied-zwischen-lose-gekoppelten-und-fest-gekoppelten-systemen-mit-beispielen/
+https://www.geeksforgeeks.org/computer-networks/what-is-message-oriented-middleware-mom/
