@@ -7,6 +7,8 @@ import org.springframework.stereotype.Service;
 import rest.model.WarehouseData;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
+import java.util.List;
+
 @Component
 public class WarehouseProducer {
 
@@ -20,6 +22,19 @@ public class WarehouseProducer {
      * Sendet WarehouseData an Kafka Topic
      */
     public void sendWarehouseData(WarehouseData data) {
+        try {
+            ObjectMapper mapper = new ObjectMapper();
+            String jsonData = mapper.writeValueAsString(data);
+
+            kafkaTemplate.send(TOPIC, jsonData);
+
+            System.out.println("Sent to Kafka: " + jsonData);
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+    public void sendAll(List<WarehouseData> data) {
         try {
             ObjectMapper mapper = new ObjectMapper();
             String jsonData = mapper.writeValueAsString(data);
